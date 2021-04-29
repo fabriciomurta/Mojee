@@ -14,6 +14,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - uses: actions/checkout@v2
+        with:
+          repository: fabriciomurta/mojee-dev
+          ssh-key: ${{ secrets.MOJEE_DEV_DEPLOY_KEY }}
+          path: ${{ github.workspace }}/../mojee-dev
+
       - uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 5.0.x
