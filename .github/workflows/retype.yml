@@ -18,7 +18,11 @@ jobs:
         with:
           repository: fabriciomurta/mojee-dev
           ssh-key: ${{ secrets.MOJEE_DEV_DEPLOY_KEY }}
-          path: ${{ github.workspace }}/../mojee-dev
+          path: mojee-dev-${{ github.run_id }}-${{ github.run_number }}
+
+      - name: move private repo to same level
+        shell: bash
+        run: mv mojee-dev-${{ github.run_id }}-${{ github.run_number }} ../mojee-dev
 
       - uses: actions/setup-dotnet@v1
         with:
