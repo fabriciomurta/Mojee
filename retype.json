@@ -7,6 +7,10 @@
       "title": " | Mojee Documentation"
     },
 
+    "code": [{
+      "input": "../mojee-dev/src/csharp"
+    }],
+
     "branding": {
       "title": "Mojee",
       "label": "docs",
